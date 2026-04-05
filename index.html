@@ -326,7 +326,13 @@ nav{position:fixed;top:30px;left:0;right:0;z-index:999;background:var(--white);b
 .zone-n{font-family:var(--font-s);font-size:12px;color:var(--rose-pale);min-width:18px;margin-top:2px}
 .zone-pt-name{font-size:10px;font-weight:normal;letter-spacing:.16em;text-transform:uppercase;color:var(--navy);margin-bottom:5px;transition:color .2s}
 .zone-pt-desc{font-size:13px;font-weight:300;line-height:1.65;color:var(--text-mid)}
-.zone-map{background:var(--cream-dk);border:1px solid var(--border);aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px}
+.zone-map{background:var(--cream-dk);border:1px solid var(--border);overflow:hidden;min-height:420px}
+.zone-map-inner{display:flex;flex-direction:column;align-items:center;gap:14px;padding:48px 32px;text-align:center}
+.zone-map-ico{font-size:36px;opacity:.4}
+.zone-map-title{font-family:var(--font-d);font-size:14px;font-weight:normal;letter-spacing:.14em;text-transform:uppercase;color:var(--navy)}
+.zone-map-desc{font-family:var(--font-s);font-size:14px;font-weight:300;color:var(--text-mid);line-height:1.6}
+.zone-map-btn{background:var(--navy);color:var(--white);font-family:var(--font-d);font-size:10px;letter-spacing:.14em;text-transform:uppercase;padding:14px 28px;text-decoration:none;display:inline-block;margin-top:8px;transition:var(--ease)}
+.zone-map-btn:hover{background:var(--rose)}
 .zone-map-ico{font-size:28px;opacity:.45}
 .zone-map-lbl{font-size:9px;font-weight:500;letter-spacing:.2em;text-transform:uppercase;color:var(--text-light)}
 
@@ -463,7 +469,10 @@ footer{background:var(--navy);padding:34px 48px;display:flex;justify-content:spa
 .btn-booking.disabled{background:rgba(255,255,255,.1);color:rgba(255,255,255,.2);cursor:not-allowed;pointer-events:none;transform:none}
 .btn-booking-hint{font-family:var(--font-s);font-size:12px;font-style:italic;color:rgba(255,255,255,.22);margin-top:10px;display:block;text-align:center}
 
-/* FAQ */
+/* WHATSAPP FLOTTANT */
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:56px;height:56px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none;transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+.wa-float svg{width:30px;height:30px}
 .sec-faq{padding:96px 48px;background:var(--white)}
 .faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column}
 .faq-item{border-bottom:1px solid var(--border)}
@@ -888,46 +897,43 @@ body.lang-fr li[data-lang="fr"],body.lang-en li[data-lang="en"],body.lang-it li[
 
 <!-- TARIFS -->
 <section class="sec-tarifs" id="tarifs">
-  <div class="tarifs-inner" style="max-width:1100px;margin:0 auto">
-    <div class="reveal" style="text-align:center;margin-bottom:52px">
+  <div class="tarifs-inner">
+    <div class="reveal">
       <p class="sec-eyebrow"><span data-lang="fr">Tarification</span><span data-lang="en">Pricing</span><span data-lang="it">Tariffe</span></p>
       <h2 class="sec-title"><span data-lang="fr">Nos tarifs</span><span data-lang="en">Our rates</span><span data-lang="it">Le nostre tariffe</span></h2>
-      <p class="sec-lead"><span data-lang="fr">Deux services, deux tarifs clairs et sans surprise.</span><span data-lang="en">Two services, two clear and transparent rates.</span><span data-lang="it">Due servizi, due tariffe chiare e trasparenti.</span></p>
+      <p class="sec-lead" style="margin-bottom:32px"><span data-lang="fr">Deux services, deux tarifs clairs et sans surprise.</span><span data-lang="en">Two services, two clear and transparent rates.</span><span data-lang="it">Due servizi, due tariffe chiare e trasparenti.</span></p>
+      <a href="#booking" class="btn-primary"><span data-lang="fr">Réserver maintenant</span><span data-lang="en">Book now</span><span data-lang="it">Prenota ora</span></a>
     </div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px" class="reveal d2">
-
-      <!-- Tarif 1 — Yachts -->
-      <div class="tarif-box">
-        <div class="tarif-label" style="font-family:var(--font-d);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin-bottom:16px"><span data-lang="fr">⚓ Yachts au mouillage</span><span data-lang="en">⚓ Anchored yachts</span><span data-lang="it">⚓ Yacht all'ancora</span></div>
+    <div class="reveal d2">
+      <div class="tarif-box" style="margin-bottom:32px">
+        <div style="font-family:var(--font-d);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin-bottom:16px"><span data-lang="fr">⚓ Yachts au mouillage</span><span data-lang="en">⚓ Anchored yachts</span><span data-lang="it">⚓ Yacht all'ancora</span></div>
         <div class="tarif-amount"><sup>€</sup>10</div>
-        <div class="tarif-per"><span data-lang="fr">TTC · aller-retour · par personne</span><span data-lang="en">VAT incl. · return journey · per person</span><span data-lang="it">IVA incl. · andata e ritorno · a persona</span></div>
+        <div class="tarif-per"><span data-lang="fr">TTC · aller-retour · par personne</span><span data-lang="en">VAT incl. · return · per person</span><span data-lang="it">IVA incl. · A/R · a persona</span></div>
         <ul class="tarif-list">
-          <li data-lang="fr">Aller-retour obligatoire (point A → B → A)</li>
+          <li data-lang="fr">Aller-retour obligatoire (A → B → A)</li>
           <li data-lang="fr">Max 12 personnes par trajet</li>
           <li data-lang="fr">Enfants de moins de 3 ans gratuits</li>
-          <li data-lang="fr">Réservation en ligne 7j/7</li>
-          <li data-lang="en">Return journey only (point A → B → A)</li>
+          <li data-lang="fr">Réservation et paiement 100% en ligne</li>
+          <li data-lang="en">Return journey only (A → B → A)</li>
           <li data-lang="en">Max 12 passengers per journey</li>
           <li data-lang="en">Children under 3 travel free</li>
-          <li data-lang="en">Online booking 7 days a week</li>
-          <li data-lang="it">Solo andata e ritorno (punto A → B → A)</li>
+          <li data-lang="en">100% online booking and payment</li>
+          <li data-lang="it">Solo andata e ritorno (A → B → A)</li>
           <li data-lang="it">Max 12 passeggeri per tratta</li>
           <li data-lang="it">Bambini sotto i 3 anni gratuiti</li>
-          <li data-lang="it">Prenotazione online 7 giorni su 7</li>
+          <li data-lang="it">Prenotazione e pagamento 100% online</li>
         </ul>
       </div>
-
-      <!-- Tarif 2 — Passable Beach -->
       <div class="tarif-box">
-        <div class="tarif-label" style="font-family:var(--font-d);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin-bottom:16px"><span data-lang="fr">🏖 Port de la Santé ↔ Passable Beach</span><span data-lang="en">🏖 Port de la Santé ↔ Passable Beach</span><span data-lang="it">🏖 Porto della Sanità ↔ Passable Beach</span></div>
-        <div style="display:flex;gap:24px;align-items:flex-end;margin-bottom:8px">
+        <div style="font-family:var(--font-d);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin-bottom:16px"><span data-lang="fr">🏖 Port de la Santé ↔ Passable Beach</span><span data-lang="en">🏖 Port de la Santé ↔ Passable Beach</span><span data-lang="it">🏖 Porto della Sanità ↔ Passable Beach</span></div>
+        <div style="display:flex;gap:20px;align-items:flex-end;margin-bottom:8px">
           <div>
-            <div class="tarif-amount" style="font-size:52px"><sup>€</sup>45</div>
+            <div class="tarif-amount"><sup>€</sup>45</div>
             <div class="tarif-per"><span data-lang="fr">TTC · aller simple</span><span data-lang="en">VAT incl. · one way</span><span data-lang="it">IVA incl. · solo andata</span></div>
           </div>
           <div style="color:var(--rose);font-size:24px;margin-bottom:16px">·</div>
           <div>
-            <div class="tarif-amount" style="font-size:52px"><sup>€</sup>60</div>
+            <div class="tarif-amount"><sup>€</sup>60</div>
             <div class="tarif-per"><span data-lang="fr">TTC · aller-retour</span><span data-lang="en">VAT incl. · return</span><span data-lang="it">IVA incl. · A/R</span></div>
           </div>
         </div>
@@ -946,11 +952,7 @@ body.lang-fr li[data-lang="fr"],body.lang-en li[data-lang="en"],body.lang-it li[
           <li data-lang="it">Bambini sotto i 3 anni gratuiti</li>
         </ul>
       </div>
-
-    </div>
-    <div class="tarif-note reveal d3" style="text-align:center;margin-top:24px"><span data-lang="fr">✓ Aucun frais supplémentaire</span><span data-lang="en">✓ No hidden fees</span><span data-lang="it">✓ Nessun costo aggiuntivo</span></div>
-    <div style="text-align:center;margin-top:32px" class="reveal d4">
-      <a href="#booking" class="btn-primary"><span data-lang="fr">Réserver maintenant</span><span data-lang="en">Book now</span><span data-lang="it">Prenota ora</span></a>
+      <div class="tarif-note" style="margin-top:16px"><span data-lang="fr">✓ Aucun frais supplémentaire</span><span data-lang="en">✓ No hidden fees</span><span data-lang="it">✓ Nessun costo aggiuntivo</span></div>
     </div>
   </div>
 </section>
@@ -970,8 +972,7 @@ body.lang-fr li[data-lang="fr"],body.lang-en li[data-lang="en"],body.lang-it li[
       </div>
     </div>
     <div class="zone-map reveal d2">
-      <div class="zone-map-ico">⚓</div>
-      <div class="zone-map-lbl"><span data-lang="fr">Carte Google Maps — à intégrer</span><span data-lang="en">Google Maps — to be integrated</span><span data-lang="it">Google Maps — da integrare</span></div>
+      <img src="rade.jpg" alt="Vue aérienne de la rade de Villefranche-sur-Mer" style="width:100%;height:100%;object-fit:cover;display:block;min-height:420px">
     </div>
   </div>
 </section>
@@ -991,7 +992,7 @@ body.lang-fr li[data-lang="fr"],body.lang-en li[data-lang="en"],body.lang-it li[
     <div class="contact-card">
       <span class="cc-ico">✉️</span>
       <div class="cc-lbl">Email</div>
-      <a href="/cdn-cgi/l/email-protection#e38a8d858ca397829b8a818c8297958a8f8f868591828d808b86cd8591" class="cc-val"><span class="__cf_email__" data-cfemail="88e1e6eee7c8fce9f0e1eae7e9fcfee1e4e4edeefae9e6ebe0eda6eefa">[email&#160;protected]</span></a>
+      <a href="/cdn-cgi/l/email-protection#80e9eee6efc0f4e1f8e9e2efe1f4f6e9ecece5e6f2e1eee3e8e5aee6f2" class="cc-val"><span class="__cf_email__" data-cfemail="10797e767f5064716879727f716466797c7c757662717e7378753e7662">[email&#160;protected]</span></a>
     </div>
     <div class="contact-card">
       <span class="cc-ico">📍</span>
@@ -1095,6 +1096,13 @@ body.lang-fr li[data-lang="fr"],body.lang-en li[data-lang="en"],body.lang-it li[
 
   </div>
 </section>
+
+<!-- WHATSAPP FLOTTANT -->
+<a href="https://wa.me/33761834102" target="_blank" class="wa-float" title="Nous contacter sur WhatsApp">
+  <svg viewBox="0 0 24 24" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
 
 <!-- FOOTER -->
 <footer>
