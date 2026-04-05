@@ -320,75 +320,10 @@ footer{background:var(--navy);padding:32px 48px;display:flex;justify-content:spa
 
 <script>
 function setLang(l,btn){
-  msg+='Nom : '+nom+'\n';
-  msg+='Marque : '+marque+'\n';
-  msg+='Couleur coque : '+couleur+'\n';
-  msg+='Passagers : '+pax+'\n\n';
-  msg+='📍 POSITION GPS\n'+gps+'\n\n';
-  msg+='Merci !';
-  return msg;
-}
-function updateWA(){
-  var msg=buildWAMsg();
-  var preview=document.getElementById('w-preview');
-  var previewText=document.getElementById('w-preview-text');
-  var send=document.getElementById('w-send');
-  if(document.getElementById('w-nom').value.trim()){
-    preview.style.display='block';
-    previewText.textContent=msg;
-  } else {
-    preview.style.display='none';
-  }
-  send.href='https://wa.me/33761834102?text='+encodeURIComponent(msg);
-}
-['w-nom','w-marque','w-couleur','w-pax','w-gps'].forEach(function(id){
-  var el=document.getElementById(id);
-  if(el) el.addEventListener('input',updateWA);
-});
-updateWA();
-
-function sendWA(){
-  var nom=document.getElementById('wa-nom').value.trim()||'—';
-  var marque=document.getElementById('wa-marque').value.trim()||'—';
-  var couleur=document.getElementById('wa-couleur').value.trim()||'—';
-  var pax=document.getElementById('wa-pax').value.trim()||'—';
-  var total=pax!=='—'?parseInt(pax)*10+'€ TTC':'—';
-  var lang=document.body.className;
-  var msg='';
-  if(lang==='lang-en'){
-    msg='Hello Villefranche Taxi Boat,%0A%0A';
-    msg+='I would like to book a transfer.%0A%0A';
-    msg+='*Yacht details*%0A';
-    msg+='Name: '+nom+'%0A';
-    msg+='Brand: '+marque+'%0A';
-    msg+='Hull colour: '+couleur+'%0A';
-    msg+='Passengers: '+pax+'%0A';
-    msg+='*Total: '+total+'*%0A%0A';
-    msg+='_I will share my live GPS location below_ ⬇️';
-  } else if(lang==='lang-it'){
-    msg='Buongiorno Villefranche Taxi Boat,%0A%0A';
-    msg+='Vorrei prenotare un trasferimento.%0A%0A';
-    msg+='*Dettagli yacht*%0A';
-    msg+='Nome: '+nom+'%0A';
-    msg+='Marca: '+marque+'%0A';
-    msg+='Colore scafo: '+couleur+'%0A';
-    msg+='Passeggeri: '+pax+'%0A';
-    msg+='*Totale: '+total+'*%0A%0A';
-    msg+='_Condividerò la mia posizione GPS in diretta_ ⬇️';
-  } else {
-    msg='Bonjour Villefranche Taxi Boat,%0A%0A';
-    msg+='Je souhaite réserver un transfert.%0A%0A';
-    msg+='*Informations yacht*%0A';
-    msg+='Nom: '+nom+'%0A';
-    msg+='Marque: '+marque+'%0A';
-    msg+='Couleur de coque: '+couleur+'%0A';
-    msg+='Passagers: '+pax+'%0A';
-    msg+='*Total: '+total+'*%0A%0A';
-    msg+='_Je partage ma position GPS en direct_ ⬇️';
-  }
-  window.open('https://wa.me/33761834102?text='+msg,'_blank');
-}
-
-function setLang(l,btn){
   document.body.className='lang-'+l;
-  document.querySelectorAll('.lb').
+  document.querySelectorAll('.lb').forEach(function(b){b.classList.remove('on')});
+  if(btn) btn.classList.add('on');
+}
+</script>
+</body>
+</html>
