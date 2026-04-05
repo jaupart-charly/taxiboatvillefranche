@@ -250,7 +250,7 @@ nav{position:fixed;top:30px;left:0;right:0;z-index:999;background:var(--white);b
 .nav-cta:hover{background:var(--rose)!important;color:var(--white)!important}
 
 /* HERO */
-.hero{min-height:100vh;background:linear-gradient(to bottom,rgba(28,43,74,.55) 0%,rgba(28,43,74,.22) 50%,rgba(28,43,74,.78) 100%),url('boat3.jpeg') center/cover no-repeat;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 24px 100px;position:relative}
+.hero{min-height:100vh;background:linear-gradient(to bottom,rgba(28,43,74,.55) 0%,rgba(28,43,74,.22) 50%,rgba(28,43,74,.78) 100%),url('villefranche.jpg') center/cover no-repeat;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:140px 24px 100px;position:relative}
 .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:90px;background:linear-gradient(to bottom,transparent,var(--white));pointer-events:none}
 .hero-eyebrow{font-size:10px;font-weight:500;letter-spacing:.28em;text-transform:uppercase;color:var(--rose-light);margin-bottom:28px;display:flex;align-items:center;gap:14px;opacity:0;animation:fadeUp .8s ease forwards .2s}
 .hero-eyebrow::before,.hero-eyebrow::after{content:'';display:inline-block;width:28px;height:1px;background:var(--rose-light)}
@@ -888,36 +888,69 @@ body.lang-fr li[data-lang="fr"],body.lang-en li[data-lang="en"],body.lang-it li[
 
 <!-- TARIFS -->
 <section class="sec-tarifs" id="tarifs">
-  <div class="tarifs-inner">
-    <div class="reveal">
+  <div class="tarifs-inner" style="max-width:1100px;margin:0 auto">
+    <div class="reveal" style="text-align:center;margin-bottom:52px">
       <p class="sec-eyebrow"><span data-lang="fr">Tarification</span><span data-lang="en">Pricing</span><span data-lang="it">Tariffe</span></p>
-      <h2 class="sec-title"><span data-lang="fr">Un prix,<br>simple &amp; transparent</span><span data-lang="en">One price,<br>simple &amp; transparent</span><span data-lang="it">Un prezzo,<br>semplice &amp; trasparente</span></h2>
-      <p class="sec-lead" style="margin-bottom:32px"><span data-lang="fr">Quel que soit votre trajet dans la rade de Villefranche, le tarif est identique pour tous.</span><span data-lang="en">Whatever your journey in the bay of Villefranche, the rate is the same for everyone.</span><span data-lang="it">Qualunque sia la vostra tratta nella rada di Villefranche, la tariffa è la stessa per tutti.</span></p>
-      <a href="#booking" class="btn-primary"><span data-lang="fr">Réserver maintenant</span><span data-lang="en">Book now</span><span data-lang="it">Prenota ora</span></a>
+      <h2 class="sec-title"><span data-lang="fr">Nos tarifs</span><span data-lang="en">Our rates</span><span data-lang="it">Le nostre tariffe</span></h2>
+      <p class="sec-lead"><span data-lang="fr">Deux services, deux tarifs clairs et sans surprise.</span><span data-lang="en">Two services, two clear and transparent rates.</span><span data-lang="it">Due servizi, due tariffe chiare e trasparenti.</span></p>
     </div>
-    <div class="reveal d2">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px" class="reveal d2">
+
+      <!-- Tarif 1 — Yachts -->
       <div class="tarif-box">
+        <div class="tarif-label" style="font-family:var(--font-d);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin-bottom:16px"><span data-lang="fr">⚓ Yachts au mouillage</span><span data-lang="en">⚓ Anchored yachts</span><span data-lang="it">⚓ Yacht all'ancora</span></div>
         <div class="tarif-amount"><sup>€</sup>10</div>
         <div class="tarif-per"><span data-lang="fr">TTC · aller-retour · par personne</span><span data-lang="en">VAT incl. · return journey · per person</span><span data-lang="it">IVA incl. · andata e ritorno · a persona</span></div>
         <ul class="tarif-list">
-          <li data-lang="fr">10€ TTC aller-retour par personne</li>
-          <li data-lang="fr">Tarif identique pour tous les trajets dans la rade</li>
-          <li data-lang="fr">Yachts, plages privées, restaurants, hôtels</li>
+          <li data-lang="fr">Aller-retour obligatoire (point A → B → A)</li>
+          <li data-lang="fr">Max 12 personnes par trajet</li>
           <li data-lang="fr">Enfants de moins de 3 ans gratuits</li>
-          <li data-lang="fr">Réservation et paiement 100% en ligne</li>
-          <li data-lang="en">€10 VAT incl. return journey per person</li>
-          <li data-lang="en">Flat rate for all journeys within the bay</li>
-          <li data-lang="en">Yachts, private beaches, restaurants, hotels</li>
+          <li data-lang="fr">Réservation en ligne 7j/7</li>
+          <li data-lang="en">Return journey only (point A → B → A)</li>
+          <li data-lang="en">Max 12 passengers per journey</li>
           <li data-lang="en">Children under 3 travel free</li>
-          <li data-lang="en">100% online booking and payment</li>
-          <li data-lang="it">10€ IVA incl. andata e ritorno a persona</li>
-          <li data-lang="it">Tariffa unica per tutte le tratte nella rada</li>
-          <li data-lang="it">Yacht, spiagge private, ristoranti, hotel</li>
+          <li data-lang="en">Online booking 7 days a week</li>
+          <li data-lang="it">Solo andata e ritorno (punto A → B → A)</li>
+          <li data-lang="it">Max 12 passeggeri per tratta</li>
           <li data-lang="it">Bambini sotto i 3 anni gratuiti</li>
-          <li data-lang="it">Prenotazione e pagamento 100% online</li>
+          <li data-lang="it">Prenotazione online 7 giorni su 7</li>
         </ul>
       </div>
-      <div class="tarif-note"><span data-lang="fr">✓ Aucun frais supplémentaire</span><span data-lang="en">✓ No hidden fees</span><span data-lang="it">✓ Nessun costo aggiuntivo</span></div>
+
+      <!-- Tarif 2 — Passable Beach -->
+      <div class="tarif-box">
+        <div class="tarif-label" style="font-family:var(--font-d);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--rose);margin-bottom:16px"><span data-lang="fr">🏖 Port de la Santé ↔ Passable Beach</span><span data-lang="en">🏖 Port de la Santé ↔ Passable Beach</span><span data-lang="it">🏖 Porto della Sanità ↔ Passable Beach</span></div>
+        <div style="display:flex;gap:24px;align-items:flex-end;margin-bottom:8px">
+          <div>
+            <div class="tarif-amount" style="font-size:52px"><sup>€</sup>45</div>
+            <div class="tarif-per"><span data-lang="fr">TTC · aller simple</span><span data-lang="en">VAT incl. · one way</span><span data-lang="it">IVA incl. · solo andata</span></div>
+          </div>
+          <div style="color:var(--rose);font-size:24px;margin-bottom:16px">·</div>
+          <div>
+            <div class="tarif-amount" style="font-size:52px"><sup>€</sup>60</div>
+            <div class="tarif-per"><span data-lang="fr">TTC · aller-retour</span><span data-lang="en">VAT incl. · return</span><span data-lang="it">IVA incl. · A/R</span></div>
+          </div>
+        </div>
+        <ul class="tarif-list">
+          <li data-lang="fr">Tarif au trajet (pas par personne)</li>
+          <li data-lang="fr">Max 5 personnes par trajet</li>
+          <li data-lang="fr">Aller simple ou aller-retour au choix</li>
+          <li data-lang="fr">Enfants de moins de 3 ans gratuits</li>
+          <li data-lang="en">Price per journey (not per person)</li>
+          <li data-lang="en">Max 5 passengers per journey</li>
+          <li data-lang="en">One way or return as you wish</li>
+          <li data-lang="en">Children under 3 travel free</li>
+          <li data-lang="it">Prezzo per tratta (non a persona)</li>
+          <li data-lang="it">Max 5 passeggeri per tratta</li>
+          <li data-lang="it">Solo andata o andata e ritorno a scelta</li>
+          <li data-lang="it">Bambini sotto i 3 anni gratuiti</li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="tarif-note reveal d3" style="text-align:center;margin-top:24px"><span data-lang="fr">✓ Aucun frais supplémentaire</span><span data-lang="en">✓ No hidden fees</span><span data-lang="it">✓ Nessun costo aggiuntivo</span></div>
+    <div style="text-align:center;margin-top:32px" class="reveal d4">
+      <a href="#booking" class="btn-primary"><span data-lang="fr">Réserver maintenant</span><span data-lang="en">Book now</span><span data-lang="it">Prenota ora</span></a>
     </div>
   </div>
 </section>
@@ -958,7 +991,7 @@ body.lang-fr li[data-lang="fr"],body.lang-en li[data-lang="en"],body.lang-it li[
     <div class="contact-card">
       <span class="cc-ico">✉️</span>
       <div class="cc-lbl">Email</div>
-      <a href="mailto:info@taxiboatvillefranche.fr" class="cc-val">info@taxiboatvillefranche.fr</a>
+      <a href="/cdn-cgi/l/email-protection#e38a8d858ca397829b8a818c8297958a8f8f868591828d808b86cd8591" class="cc-val"><span class="__cf_email__" data-cfemail="88e1e6eee7c8fce9f0e1eae7e9fcfee1e4e4edeefae9e6ebe0eda6eefa">[email&#160;protected]</span></a>
     </div>
     <div class="contact-card">
       <span class="cc-ico">📍</span>
@@ -1076,7 +1109,7 @@ body.lang-fr li[data-lang="fr"],body.lang-en li[data-lang="en"],body.lang-it li[
   </div>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function toggleFaq(btn){
   const item=btn.closest('.faq-item');
   const wasOpen=item.classList.contains('open');
@@ -1194,12 +1227,4 @@ function updateWAPreview(){
 
 document.addEventListener('DOMContentLoaded', function(){
   const yb = document.getElementById('yacht-block');
-  if(yb) yb.style.display = 'block';
-  updateBtn();
-  ['yacht-nom','yacht-marque','yacht-longueur','yacht-couleur','yacht-passagers','gps-maps-link'].forEach(id => {
-    const el = document.getElementById(id);
-    if(el) el.addEventListener('input', updateWAPreview);
-  });
-});
-</script>
-<a href="https://wa.me/33761834102" target="_blank" style="position:fixed;bottom:24px;right:24px;z-index:9999;width:54px;height:54px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center;text-decoration:none" title="WhatsApp"><svg width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a></script>
+  if(yb) yb.style.display 
